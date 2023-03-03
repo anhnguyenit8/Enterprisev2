@@ -13,7 +13,7 @@ namespace Enterprisev2.Data
 
         public DbSet<Post> Post { get; set; }
 
-        /* public DbSet<Department> Category { get; set; }*/
+        public DbSet<Department> Department { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Category> Category { get; set; }
         public DbSet<User> User { get; set; }
