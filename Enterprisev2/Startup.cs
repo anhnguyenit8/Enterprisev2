@@ -1,7 +1,10 @@
 using Enterprisev2.Data;
+using Enterprisev2.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -10,6 +13,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebEcommerce.Initializer;
 
 namespace Enterprisev2
 {
@@ -30,6 +34,9 @@ namespace Enterprisev2
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
             services.AddControllersWithViews();
+            services.AddIdentity<User,IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddMemoryCache();
+            services.AddAuthentication();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,7 +56,10 @@ namespace Enterprisev2
             app.UseStaticFiles();
 
             app.UseRouting();
-
+           /* app.UseAuthentication(option =>
+            {
+                option.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            });*/
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -58,6 +68,7 @@ namespace Enterprisev2
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+            DbInitializer.SeedUsersAndRolesAsync(app);
         }
     }
 }

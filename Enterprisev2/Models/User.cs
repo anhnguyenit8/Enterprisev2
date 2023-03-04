@@ -1,9 +1,8 @@
-﻿using Enterprisev2.Enums;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-using Enterprisev2.Enums;
 using System.Collections.Generic;
+using Enterprisev2.Static;
 
 namespace Enterprisev2.Models
 {
@@ -11,7 +10,7 @@ namespace Enterprisev2.Models
     {
         [Key]
         
-        public RoleStatus RoleId { get; set; } = RoleStatus.RoleId;
+        /*public UserRoles RoleId { get; set; } = UserRoles.RoleId;*/
         [Required]
         [ForeignKey("Department")]
         public int DepartmentId { get; set; }
