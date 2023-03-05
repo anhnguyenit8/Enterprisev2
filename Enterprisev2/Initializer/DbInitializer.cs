@@ -35,22 +35,27 @@ namespace WebEcommerce.Initializer
                 #region User
 
                 var userManager =
-                    applicationservices.ServiceProvider.GetRequiredService<UserManager<User>>();
+                    applicationservices.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
                 
                 if(await userManager.FindByEmailAsync("admin@admin.com") == null)
                 {
-                    var newAdminUser = new User() {
-                        Email = "admin@admin.com", EmailConfirmed = true, UserName = "Admin" };
+                    var newAdminUser = new ApplicationUser()
+                    {
+                        Email = "admin@admin.com",
+                        EmailConfirmed = true,
+                        FullName = "Admin User",
+                        UserName = "Admin"
+                    };
                     await userManager.CreateAsync(newAdminUser,"@Admin123");
                     await userManager.AddToRoleAsync(newAdminUser, UserRoles.Admin);
 
                     if (await userManager.FindByEmailAsync("user@user.com") == null)
                     {
-                        var newOriginalUser = new User()
+                        var newOriginalUser = new ApplicationUser()
                         {
                             Email = "user@user.com",
                             EmailConfirmed = true,
-                            /*FullName = "Original User",*/
+                            FullName = "Original User",
                             UserName = "User"
                         };
                         await userManager.CreateAsync(newOriginalUser, "@User123");
