@@ -16,15 +16,15 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                     </div>
-                                    <form class="user">
+                                    <form asp-action="Login">
+                                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
-                                                   asp-for="EmailAddress" aria-describedby="emailHelp"
-                                                   placeholder="Enter Username...">
+                                            <input class="form-control"
+                                                   asp-for="EmailAddress" placeholder="Email Address" autocomplete="off">
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                   asp-for="Password" placeholder="Password">
+                                            <input class="form-control"
+                                                   asp-for="Password" placeholder="Password" autocomplete="off">
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
@@ -35,9 +35,11 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <a class="btn btn-primary btn-user btn-block" herf="Home/index.html" >
+                                        <div class="form-group">
+                                        <input class="btn btn-primary btn-user btn-block" type="submit" value="Login" />
                                             Login
-                                        </a>
+                                        
+                                        </div>
                                     </form>
                                     <hr>
                                     <div class="text-center">

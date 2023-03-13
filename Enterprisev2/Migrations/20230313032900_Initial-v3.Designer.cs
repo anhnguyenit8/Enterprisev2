@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Enterprisev2.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230305162542_TestDb_v4")]
-    partial class TestDb_v4
+    [Migration("20230313032900_Initial-v3")]
+    partial class Initialv3
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -36,7 +36,7 @@ namespace Enterprisev2.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("DepartmentId")
+                    b.Property<int?>("DepartmentId")
                         .HasColumnType("int");
 
                     b.Property<string>("Email")
@@ -354,9 +354,7 @@ namespace Enterprisev2.Migrations
                 {
                     b.HasOne("Enterprisev2.Models.Department", "Department")
                         .WithMany("Users")
-                        .HasForeignKey("DepartmentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("DepartmentId");
 
                     b.Navigation("Department");
                 });

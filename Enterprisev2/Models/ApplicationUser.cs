@@ -8,11 +8,11 @@ namespace Enterprisev2.Models
 {
     public class ApplicationUser : IdentityUser
     {
-        [Key]
-        /*public UserRoles RoleId { get; set; } = UserRoles.RoleId;*/
+       /* [Key]
+        public UserRoles RoleId { get; set; } = UserRoles.RoleId;
         [Required]
         [ForeignKey("Department")]
-        public int DepartmentId { get; set; }
+        public int DepartmentId { get; set; }*/
         public Department Department { get; set; }
         public List<Post> Posts { get; set; }
 

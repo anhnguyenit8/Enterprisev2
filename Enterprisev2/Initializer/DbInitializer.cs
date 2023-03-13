@@ -37,11 +37,11 @@ namespace WebEcommerce.Initializer
                 var userManager =
                     applicationservices.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
                 
-                if(await userManager.FindByEmailAsync("admin@admin.com") == null)
+                if(await userManager.FindByEmailAsync("admin@gmail.com") == null)
                 {
                     var newAdminUser = new ApplicationUser()
                     {
-                        Email = "admin@admin.com",
+                        Email = "admin@gmail.com",
                         EmailConfirmed = true,
                         FullName = "Admin User",
                         UserName = "Admin"
@@ -49,11 +49,11 @@ namespace WebEcommerce.Initializer
                     await userManager.CreateAsync(newAdminUser,"@Admin123");
                     await userManager.AddToRoleAsync(newAdminUser, UserRoles.Admin);
 
-                    if (await userManager.FindByEmailAsync("user@user.com") == null)
+                    if (await userManager.FindByEmailAsync("user@gmail.com") == null)
                     {
                         var newOriginalUser = new ApplicationUser()
                         {
-                            Email = "user@user.com",
+                            Email = "user@gmail.com",
                             EmailConfirmed = true,
                             FullName = "Original User",
                             UserName = "User"
