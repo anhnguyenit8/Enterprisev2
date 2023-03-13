@@ -33,10 +33,18 @@ namespace Enterprisev2
             {
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
-            services.AddControllersWithViews();
-            services.AddIdentity<User,IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddControllersWithViews();            
+            
+            services.AddScoped<ApplicationDbContext, ApplicationDbContext>();
+            services.AddSession();
+            //Identity
+            services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddMemoryCache();
-            services.AddAuthentication();
+            services.AddAuthentication(options =>
+            {
+                options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            });
+            services.AddAuthorization();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -62,13 +70,14 @@ namespace Enterprisev2
             });*/
             app.UseAuthorization();
 
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
-            DbInitializer.SeedUsersAndRolesAsync(app);
+            DbInitializer.SeedUsersAndRolesAsync(app).Wait();
         }
     }
 }

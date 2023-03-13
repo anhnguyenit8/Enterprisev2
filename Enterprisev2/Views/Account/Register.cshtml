@@ -14,32 +14,34 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                             </div>
-                            <form class="user">
+                            <form asp-action="Register">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" id="exampleInputUsername"
-                                           placeholder="Username">
+                                    <input class="form-control"
+                                           asp-for="FullName" placeholder="Username" autocomplete="off">
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                                           placeholder="Email Address">
+                                    <input class="form-control"
+                                           asp-for="EmailAddress" placeholder="Email Address" autocomplete="off">
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" class="form-control form-control-user"
-                                               id="exampleInputPassword" placeholder="Password">
+                                        <input class="form-control"
+                                               asp-for="Password" placeholder="Password" autocomplete="off">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="password" class="form-control form-control-user"
-                                               id="exampleRepeatPassword" placeholder="Repeat Password">
+                                        <input class="form-control"
+                                               asp-for="ConfirmPassword" placeholder="Repeat Password" autocomplete="off">
                                     </div>
                                 </div>
-                                <a href="login.html" class="btn btn-primary btn-user btn-block">
-                                    Register Account
-                                </a>
+                                <div class="form-group">
+                                <input class="btn btn-primary btn-user btn-block" type="submit" value="Register Account" />
+                                    
+                                </div>
                             </form>
                             <hr>
                             <div class="text-center">
-                                <a class="small" href="login.html">Already have an account? Login!</a>
+                                <a class="small" asp-action="Login">Already have an account? Login!</a>
                             </div>
                         </div>
                     </div>

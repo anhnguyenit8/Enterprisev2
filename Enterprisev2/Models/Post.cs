@@ -23,7 +23,7 @@ namespace Enterprisev2.Models
         public Category Category { get; set; }
         
         public string UserId { get; set; }
-        public User User { get; set; }
+        public ApplicationUser User { get; set; }
         public byte[] ImageData { get; set; }
         public byte[] Like { get; set; }
         public byte[] DisLike { get; set; }
