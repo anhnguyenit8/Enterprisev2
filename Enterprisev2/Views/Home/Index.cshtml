@@ -2,62 +2,226 @@
     ViewData["Title"] = "Home Page";
 }
 <head>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/site.css" />
     <style>
-        form {
-            display: block;
+        .main-content {
+            margin-top: 30px;
         }
-        body {
-            font-family: "Poppins", Arial, sans-serif;
-            font-size: 16px;
-            line-height: 1.8;
-            font-weight: normal;
-            background: #fafafa;
-            color: #666666;
+
+        .write-post-container {
+            width: 100%;
+            background: #fff;
+            border-radius: 6px;
+            padding: 20px;
+            columns: #626262;
         }
-        .wrap {
-            background: #e8edf0;
+
+        .user-profile {
+            display: flex;
+            align-items: center;
         }
-        select{
-            border-radius: 8px;
-            width: 200px;
+
+            .user-profile img {
+                width: 45px;
+                border-radius: 50px;
+                margin-right: 10px;
+            }
+
+            .user-profile p {
+                margin-bottom: 0 !important;
+                margin-top: -5px;
+                font-weight: 500;
+                color: rgb(31 41 55);
+            }
+
+            .user-profile small {
+                font-size: 12px;
+            }
+
+        .post-input-container {
+            padding-top: 10px;
+            padding-left: 55px;
         }
-        button{
+
+            .post-input-container textarea {
+                width: 100%;
+                border: 0;
+                outline: 0;
+                border-bottom: 1px solid #ccc;
+                background: transparent;
+                resize: none;
+                overflow: hidden
+            }
+
+            .post-input-container input {
+                width: 100%;
+                border: 0;
+                outline: 0;
+                border-bottom: 1px solid #ccc;
+                background: transparent;
+                margin-bottom: 10px;
+            }
+
+        form button {
+            border-radius: 5px;
             position: absolute;
-            right: 16px;
-            border-radius: 24px;
-            height:auto;
-            width:100px;
+            right: 12px;
+            margin-top: -50px;
         }
-        textarea{
-            min-height: 200px;
+
+        .add-post-link {
+            display: flex;
+            margin-top: 10px;
+            margin-left: 15px;
+        }
+
+            .add-post-link a {
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                color: #626262;
+                margin-right: 30px;
+                font-size: 13px;
+            }
+
+                .add-post-link a img {
+                    width: 20px;
+                    margin-right: 10px;
+                }
+
+        .post-container {
+            width: 100%;
+            background: #fff;
+            border-radius: 6px;
+            padding: 20px;
+            color: #626262;
+            margin: 20px 0;
+        }
+            
+        .user-profile span {
+            font-size: 13px;
+            color: #9a9a9a;
+        }
+
+        .post-text {
+            margin: 15px 0;
+            margin-top: 10px;
+        }
+
+            .post-text p {
+                font-size: 15px;
+                margin-top: 8px;
+            }
+
+            .post-text h3 {
+                color: #000;
+            }
+
+        .post-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+         
+        .activity-icon div img {
+            width: 18px;
+            margin-right: 10px;
+        }
+
+        .activity-icon div {
+            display: inline-flex;
+            align-items: center;
+            margin-right: 30px;
         }
     </style>
 </head>
+
 <body>
-    <div class="wrap">
-        <form>
-            <div class="row p-4">
-                <div class="col-md-12 mb-2">
-                    <h1 class="mb-4">Create your post</h1>
-                    <input type="text" class="form-control" placeholder="Title"/>
-                </div>
-                <div class="col-md-12 mb-2">
-                    <textarea 
-                        class="form-control" 
-                        placeholder="Text(Optional)" 
-                        oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
-                </div>
-                <div class="col-md-6">
-                    <select class="px-2 py-2">
-                        <option value="public" selected>Public</option>
-                        <option value="anonymous">Anonymous</option>
-                    </select>
-                </div>
-                <div class="col-md-6">
-                    <button class="btn-primary">Post</button>
+    <div class="main-content">
+        <div class="write-post-container">
+            <div class="user-profile">
+                <img src="~/images/profile-pic.png" />
+                <div>
+                    <p>Ba Thinh</p>
+                    <small>public <i class="fa-solid fa-caret-down"></i></small>
                 </div>
             </div>
-        </form>
+            <div class="post-input-container">
+                <form>
+                    <div class="col-md-12"><button id="btnId" class="btn-primary">Post</button></div>
+                    <div class="col-md-12">
+                        <input id="input" placeholder="Title" />
+                        <textarea rows="3"
+                                  placeholder="What on your mind, Thinh tu"
+                                  oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
+                    </div>
+                </form>
+                <div class="add-post-link">
+                    <a href="#"><img src="~/images/live-video.png" /> Video</a>
+                    <a href="#"><img src="~/images/photo.png" /> Photo</a>
+                    <a href="#"><img src="~/images/feeling.png" /> Feeling/Activity</a>
+                </div>
+            </div>
+        </div>
+        <div class="post-container">
+            <div class="user-profile">
+                <img src="~/images/profile-pic.png" />
+                <div>
+                    <p>Ba Thinh</p>
+                    <span>Mar 10 2023, 15:25 pm</span>
+                </div>
+            </div>
+            <div class="post-text">
+                <h3>I'm gay</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin et nulla massa. Vivamus aliquam, neque id finibus maximus,
+                    arcu quam mattis tellus, eu egestas nisi massa in nulla. Curabitur posuere tincidunt magna, a rhoncus ligula.
+                    Nullam convallis neque sem, at malesuada dui eleifend non. Sed fermentum accumsan nisl, id sagittis lorem interdum vitae.
+                    Aliquam suscipit nunc sit amet dolor tincidunt, ut sollicitudin elit egestas. Nulla dignissim lacus mattis gravida accumsan.
+                    Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                </p>
+            </div>
+            <div class="post-row">
+                <div class="activity-icon">
+                    <div><img src="~/images/like-blue.png" />1000</div>
+                    <div><img src="~/images/dislike.png" />2</div>
+                    <div><img src="~/images/comments.png" />123</div>
+                </div>
+                <div class="post-profile-icons">
+                </div>
+
+            </div>
+        </div><div class="post-container">
+            <div class="user-profile">
+                <img src="~/images/profile-pic.png" />
+                <div>
+                    <p>Ba Thinh</p>
+                    <span>Mar 10 2023, 15:25 pm</span>
+                </div>
+            </div>
+            <div class="post-text">
+                <h3>I'm gay</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin et nulla massa. Vivamus aliquam, neque id finibus maximus,
+                    arcu quam mattis tellus, eu egestas nisi massa in nulla. Curabitur posuere tincidunt magna, a rhoncus ligula.
+                    Nullam convallis neque sem, at malesuada dui eleifend non. Sed fermentum accumsan nisl, id sagittis lorem interdum vitae.
+                    Aliquam suscipit nunc sit amet dolor tincidunt, ut sollicitudin elit egestas. Nulla dignissim lacus mattis gravida accumsan.
+                    Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                </p>
+            </div>
+            <div class="post-row">
+                <div class="activity-icon">
+                    <div><img src="~/images/like-blue.png" />1000</div>
+                    <div><img src="~/images/dislike.png" />2</div>
+                    <div><img src="~/images/comments.png" />123</div>
+                </div>
+                <div class="post-profile-icons">
+                </div>
+
+            </div>
+        </div>
     </div>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>

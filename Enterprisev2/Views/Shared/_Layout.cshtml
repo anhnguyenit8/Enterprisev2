@@ -6,61 +6,53 @@
     <title>@ViewData["Title"] - Enterprisev2</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
-    <link rel="stylesheet" href="~/lib/font-awesome/css/all.css" />
+    <style>
+        body {
+            background: rgb(226 232 240);
+        }
+    </style>
 </head>
 <body>
     <header>
-        <nav class=" navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            
-            <div class="container">
-                <a class="navbar-brand text-dark font-weight-bolder asp-area="" asp-controller="Home" asp-action="Index">
-                    <img src="https://www.redditstatic.com/icon.png" height="20px" width="20px" />
-                    epreddit</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-               
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <form style="width:600px;" asp-action="Index" asp-controller="Products">
-                        <input name="searchTerm" type="text" class="form-control" placeholder="Searching..." autocomplete="off" type="submit" />                        
-                    </form>
-
-                    <div class="float-right">
-                    <ul class="navbar-nav">
-                    <li>
-                                <a class="nav-link text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Notification                                    
-                                </a>
-                    </li>                       
-                    <li class="navbar-nav dropdown dropdown-hover">
-                        
-                            <a class="nav-link text-dark dropdown-toggle righ" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Username
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" asp-controller="" asp-action="Index">Edit Prolife</a>
-                            <a class="dropdown-item" asp-controller="" asp-action="Index">Settings</a>
-                            <a class="dropdown-item" asp-controller="" asp-action="Index">Log Out</a>                            
-                        </div>
-                    </li>
-                    </ul>
-                    </div>
-                    
+        <nav class="navbar" id="navbar">
+            <div class="nav-left">
+                <a asp-area="" asp-controller="Home">
+                    <img src="~/images/logo.png" class="logo" />
+                </a>
+                <ul>
+                    <li><img src="~/images/notification.png" /></li>
+                    <li><img src="~/images/inbox.png" /></li>
+                    <li><img src="~/images/video.png" /></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <div class="search-box">
+                    <img src="~/images/search.png" />
+                    <input type="text" placeholder="Search..." />
                 </div>
+                <div class="dropdown">  
+                    <a class="nav-user-icon online" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="~/images/profile-pic.png" />
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" asp-controller="" asp-action="Index"> User</a>
+                        <a class="dropdown-item" asp-controller="" asp-action="Index"> Setting</a>
+                        <a class="dropdown-item" asp-controller="" asp-action="Index"> Log Out</a>
+                    </div>
                 
+                </div>
             </div>
         </nav>
     </header>
     <div class="container">
-        <main role="main" class="pb-3">
+        <main role="main" class="pb-10">
             @RenderBody()
         </main>
     </div>
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2023 - Enterprisev2 - <a asp-area="" asp-controller="Home" asp-action="Privacy"></a>
+            &copy; 2023 - Enterprisev2 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
