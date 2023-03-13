@@ -146,16 +146,16 @@
                 <img src="~/images/profile-pic.png" />
                 <div>
                     <p>Ba Thinh</p>
-                    <small>public <i class="fa-solid fa-caret-down"></i></small>
+                    <small>Status: Public <i class="fa-caret-down"></i></small>
                 </div>
             </div>
             <div class="post-input-container">
                 <form>
-                    <div class="col-md-12"><button id="btnId" class="btn-primary">Post</button></div>
+                    <div class="col-md-12"><button id="btnId" class="btn btn-outline-primary" style="width:100px;border-radius:30px;">Post</button></div>
                     <div class="col-md-12">
                         <input id="input" placeholder="Title" />
-                        <textarea rows="3"
-                                  placeholder="What on your mind, Thinh tu"
+                        <textarea rows="1"
+                                  placeholder="What on your mind, Thinh Pro!"
                                   oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
                     </div>
                 </form>
@@ -167,61 +167,106 @@
             </div>
         </div>
         <div class="post-container">
-            <div class="user-profile">
-                <img src="~/images/profile-pic.png" />
-                <div>
-                    <p>Ba Thinh</p>
-                    <span>Mar 10 2023, 15:25 pm</span>
-                </div>
-            </div>
-            <div class="post-text">
-                <h3>I'm gay</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin et nulla massa. Vivamus aliquam, neque id finibus maximus,
-                    arcu quam mattis tellus, eu egestas nisi massa in nulla. Curabitur posuere tincidunt magna, a rhoncus ligula.
-                    Nullam convallis neque sem, at malesuada dui eleifend non. Sed fermentum accumsan nisl, id sagittis lorem interdum vitae.
-                    Aliquam suscipit nunc sit amet dolor tincidunt, ut sollicitudin elit egestas. Nulla dignissim lacus mattis gravida accumsan.
-                    Interdum et malesuada fames ac ante ipsum primis in faucibus.
-                </p>
-            </div>
-            <div class="post-row">
-                <div class="activity-icon">
-                    <div><img src="~/images/like-blue.png" />1000</div>
-                    <div><img src="~/images/dislike.png" />2</div>
-                    <div><img src="~/images/comments.png" />123</div>
-                </div>
-                <div class="post-profile-icons">
-                </div>
+            <div class="row">
+                    <div class="col border-right text-center">
+                        <div><img src="~/images/thumbup.png" style="width:50%; height:40px;" /></div>
+                    <div><b>123</b></div>
+                        <div><img src="~/images/thumbdown.png" style="width:50%; height:40px;" /></div>
+                    </div>
 
-            </div>
-        </div><div class="post-container">
-            <div class="user-profile">
-                <img src="~/images/profile-pic.png" />
-                <div>
-                    <p>Ba Thinh</p>
-                    <span>Mar 10 2023, 15:25 pm</span>
-                </div>
-            </div>
-            <div class="post-text">
-                <h3>I'm gay</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin et nulla massa. Vivamus aliquam, neque id finibus maximus,
-                    arcu quam mattis tellus, eu egestas nisi massa in nulla. Curabitur posuere tincidunt magna, a rhoncus ligula.
-                    Nullam convallis neque sem, at malesuada dui eleifend non. Sed fermentum accumsan nisl, id sagittis lorem interdum vitae.
-                    Aliquam suscipit nunc sit amet dolor tincidunt, ut sollicitudin elit egestas. Nulla dignissim lacus mattis gravida accumsan.
-                    Interdum et malesuada fames ac ante ipsum primis in faucibus.
-                </p>
-            </div>
-            <div class="post-row">
-                <div class="activity-icon">
-                    <div><img src="~/images/like-blue.png" />1000</div>
-                    <div><img src="~/images/dislike.png" />2</div>
-                    <div><img src="~/images/comments.png" />123</div>
-                </div>
-                <div class="post-profile-icons">
-                </div>
+                    <div class="col-11">
+                        <div class="user-profile">
+                            <img src="~/images/profile-pic.png" />
+                            <div>
+                                <p>Ba Thinh</p>
+                                <span>Mar 10 2023, 15:25 pm</span>
+                            </div>
+                        </div>
+                        <div class="post-text">
+                            <h3>I'm bruh bruh lmao</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin et nulla massa. Vivamus aliquam, neque id finibus maximus,
+                                arcu quam mattis tellus, eu egestas nisi massa in nulla. Curabitur posuere tincidunt magna, a rhoncus ligula.
+                                Nullam convallis neque sem, at malesuada dui eleifend non. Sed fermentum accumsan nisl, id sagittis lorem interdum vitae.
+                                Aliquam suscipit nunc sit amet dolor tincidunt, ut sollicitudin elit egestas. Nulla dignissim lacus mattis gravida accumsan.
+                                Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                            </p>
+                        </div>
+                    <div class="post-row border-top">
+                       
+                            <div class="activity-icon">
+                            <br />
+                                <div><img src="~/images/like-blue.png" />1000</div>
+                                <div><img src="~/images/dislike.png" />2</div>
+                                <div><img src="~/images/comments.png" />123</div>
+                                <div class="comment-box">
+                                    <input type="text" placeholder=" Comment ..." />
+                                </div>
+                            </div>
 
+                            <div class="post-profile-icons">
+                            </div>
+
+                        </div>
+                    </div>                
             </div>
         </div>
-    </div>
+
+        <div class="post-container">
+            <div class="row">
+                <div class="col border-right text-center">
+                    <div><img src="~/images/thumbup.png" style="width:50%; height:40px;" /></div>
+                    <div><b>123</b></div>
+                    <div><img src="~/images/thumbdown.png" style="width:50%; height:40px;" /></div>
+                </div>
+
+                <div class="col-11">
+                    <div class="user-profile">
+                        <img src="~/images/profile-pic.png" />
+                        <div>
+                            <p>Ba Thinh</p>
+                            <span>Mar 10 2023, 15:25 pm</span>
+                        </div>
+                    </div>
+                    <div class="post-text">
+                        <h3>I'm bruh bruh lmao</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin et nulla massa. Vivamus aliquam, neque id finibus maximus,
+                            arcu quam mattis tellus, eu egestas nisi massa in nulla. Curabitur posuere tincidunt magna, a rhoncus ligula.
+                            Nullam convallis neque sem, at malesuada dui eleifend non. Sed fermentum accumsan nisl, id sagittis lorem interdum vitae.
+                            Aliquam suscipit nunc sit amet dolor tincidunt, ut sollicitudin elit egestas. Nulla dignissim lacus mattis gravida accumsan.
+                            Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                        </p>
+                    </div>
+                    <div class="post-row">
+                        <div class="activity-icon">
+                            <div><img src="~/images/like-blue.png" />1000</div>
+                            <div><img src="~/images/dislike.png" />2</div>
+                            <div><img src="~/images/comments.png" />123</div>
+                            <div class="comment-box">
+                                <input type="text" placeholder=" Comment ..." />
+                            </div>
+                        </div>
+
+                        <div class="post-profile-icons">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      @*Sticky Sidebar*@
+   @* <div class="sidebar" 
+        style="width: 25%;
+            height: 25vh;
+            overflow: auto;            
+            position: sticky;
+            top: 5%;">
+            <h3>Sticky sidebar</h3>
+            <p>I will follow you!</p>
+            <p><a href="https://caniuse.com/#search=sticky">caniuse stats</a>
+        </div>*@
+    
 </body>

@@ -13,37 +13,30 @@
     </style>
 </head>
 <body>
-    <header>
+    <header>        
         <nav class="navbar" id="navbar">
             <div class="nav-left">
                 <a asp-area="" asp-controller="Home">
-                    <img src="~/images/logo.png" class="logo" />
-                </a>
+                    <img src="~/images/logo-bear.png" class="logo" />
+                </a>                
+                <div class="search-box">
+                    <img src="~/images/search-1.png" />
+                    <input type="text" placeholder="Search..." />
+                </div>
+            </div>
+            <div class="nav-right ">
                 <ul>
                     <li><img src="~/images/notification.png" /></li>
                     <li><img src="~/images/inbox.png" /></li>
                     <li><img src="~/images/video.png" /></li>
                 </ul>
-            </div>
-            <div class="nav-right">
-                <div class="search-box">
-                    <img src="~/images/search.png" />
-                    <input type="text" placeholder="Search..." />
-                </div>
-                <div class="dropdown">  
-                    <a class="nav-user-icon online" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="~/images/profile-pic.png" />
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" asp-controller="" asp-action="Index"> User</a>
-                        <a class="dropdown-item" asp-controller="" asp-action="Index"> Setting</a>
-                        <a class="dropdown-item" asp-controller="" asp-action="Index"> Log Out</a>
-                    </div>
                 
+                <div class="nav-user-icon online ">
+                    <img src="~/images/profile-pic.png" />
                 </div>
             </div>
         </nav>
-    </header>
+    </header>        
     <div class="container">
         <main role="main" class="pb-10">
             @RenderBody()
