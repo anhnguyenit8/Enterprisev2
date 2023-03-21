@@ -18,6 +18,11 @@ namespace Enterprisev2.Controllers
             _logger = logger;
         }
 
+        public IActionResult Post()
+        {
+            return View();
+        }
+
         public IActionResult Index()
         {
             return View();

@@ -1,10 +1,11 @@
-﻿using Microsoft.Extensions.Hosting;
+﻿using Enterprisev2.Base;
+using Microsoft.Extensions.Hosting;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Enterprisev2.Models
 {
-    public class Category
+    public class Category: IBaseEntity
     {
         [Key]
         public int Id { get; set; }
